@@ -1,0 +1,499 @@
+/* 页面样式部分 */
+html,
+body{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* ------------------------------------------ 页眉 ------------------------------------------- */
+header {
+  width: 100%;
+  height: 58px;
+  background-color: rgba(34, 37, 41, 1.0);
+}
+
+/* 商标 */
+.logo {
+  float: left;
+  display: block;
+  width: 160px;
+  height: 58px;
+  padding-left: 80px;
+  background: url(../img/logo.png) 35px center no-repeat;
+  background-size: 15%;
+  background-color: rgba(105, 162, 208, 1.0);
+  /* #69A2D0 */
+  color: #fff;
+  font-size: 28px;
+  line-height: 58px;
+  box-shadow: 12px 0 16px rgba(0,0,0, .4); 
+  cursor: pointer;
+  z-index: 1;
+}
+
+/* 控制面板 */
+.control-panel {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  display: flex;
+  width: 246px;
+  height: 58px;
+  margin: 0 20px;
+  justify-content: center;
+  align-items: center;
+}
+.control-panel span {
+  display: inline-block;
+  float: left; 
+  flex: 1;
+  width: 82px;
+  height: 32px;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+.control-panel span:hover {background-repeat: no-repeat;}
+.control-panel span + span {border-left: 1px solid #464545;}
+
+/* 用户信息 */
+.user {background: url(../img/control-panel.png) 19px -6px ;}
+.user:hover{background: url(../img/control-panel.png) 19px  -138px;}
+/* 工具设置 */
+.setting {background: url(../img/control-panel.png) 19px -50px ;}
+.setting:hover{background: url(../img/control-panel.png) 19px -182px;}
+/* 注销账户 */
+.write-off {background: url(../img/control-panel.png) 19px -94px ;}
+.write-off:hover{background: url(../img/control-panel.png) 19px -226px;}
+
+.user-page {
+  display: none;
+  position: absolute;
+  top: 52px;
+  left: 1050px;
+  width: 200px;
+  height: 80px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  background: rgba(162, 197, 226, 1.0);
+  opacity: 0;
+  animation: fadeIn 0.4s ease-in-out;
+}
+.user-page:before {
+  position: absolute;
+  content: '';
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-bottom-color: rgba(162, 197, 226, 1.0);
+  right: 97px;
+  top: -20px;
+}
+.user-info {
+  position: relative;
+  width: 100%;
+  height: 70%;
+}
+.user-info span {
+  display: inline-block;
+  float: left;
+  top: 10px;
+  left: 10px;
+  width: 60px;
+  height: 60px;
+  margin: 10px;
+  border-radius: 50%;
+  background: #fff;
+  background: url(../img/head.png) center center no-repeat;
+  vertical-align: center;
+}
+.user-info ul {
+  display: inline-block;
+  width: 120px;
+  height: 100%;
+}
+.user-info ul li{
+  float: left;
+  width: 100%;
+  height: 22%;
+  margin-top: 20px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: left;
+  line-height: 100%;
+}
+@keyframes fadeIn {
+  0% { opacity:0; }
+  100% { opacity:100%; }
+}
+
+/* ------------------------------------- 页面主体部分 -------------------------------------------- */
+.main {
+  width: 100%;
+  height: calc(100% - 58px);
+}
+
+/* 分类区（侧栏） */
+.side-bar {
+  float: left;
+  width: 240px;
+  height: 100%;
+  box-sizing: border-box;
+  background-color: rgba(52, 55, 66, 1.0);
+  box-shadow: -10px 10px 18px rgba(0,0,0, .3) inset;
+}
+/* 文件属性列表 */
+.file-type {
+  width: 100%;
+  height: 82%;
+  padding-top: 48px;
+  color: rgba(120, 128, 138, 1.0); 
+}
+.file-type li {
+  width: 100%;
+  height: 42px;
+  padding-left: 108px; 
+  background-repeat: no-repeat;
+  line-height: 42px;
+  box-sizing: border-box;
+}
+.file-type li:hover,
+.file-type li.active {
+  color: #fff;
+  border-right: 6px solid rgba(105, 162, 208, 1.0);
+  background-color: rgba(105, 162, 208, .2);
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+/* 侧栏项目样式 */
+.all {background: url(../img/file-type.png) 50px -1px;}
+.all:hover,
+.all.active {background: url(../img/file-type.png) 50px -221px;}
+
+.picture {background: url(../img/file-type.png) 50px -45px;}
+.picture:hover,
+.picture.active {background: url(../img/file-type.png) 50px -265px;}
+
+.note {background: url(../img/file-type.png) 50px -89px;}
+.note:hover,
+.note.active {background: url(../img/file-type.png) 50px -309px;}
+
+.video {background: url(../img/file-type.png) 50px -131px;}
+.video:hover,
+.video.active {background: url(../img/file-type.png) 50px -351px;}
+
+.other {background: url(../img/file-type.png) 50px -177px;}
+.other:hover,
+.other.active {background: url(../img/file-type.png) 50px -397px;}
+
+/* 云盘容量 */
+.capacity {
+  position: relative;
+  width: 100%;
+  height: 18%;
+  background-color: rgba(41, 44, 52, 1.0);
+}
+.capacity strong {
+  display: inline-block;
+  position: relative;
+  top: 6px;
+  left: calc(50% - 32.25%);
+  width: 65%;
+  height: 8px;
+  border-radius: 10px;
+  background: rgba(120, 128, 138, .5);
+}
+.capacity span {
+  display: inline-block;
+  float: left;
+  top: 2px;
+  left: 0;
+  width: 25%;
+  height: 4px;
+  margin: 2px;
+  border-radius: 10px;
+  background-color: rgba(105, 162, 208, 1.0);
+}
+.capacity p {
+  display: inline-block;
+  position: relative;
+  top: 25px;
+  left: 0px;
+  color: #ccc;
+  font-size: 12px;
+}
+
+/* ------------------------------------- 云盘内容主体区 --------------------------------------------- */
+.container {
+  float: left;
+  width: calc(100% - 240px);
+  height: 100%;
+  background-color: #f6f6f6;
+  box-shadow: 0 -12px 16px rgba(0,0,0, .4); 
+}
+
+/* ------------------------------------ 功能区 -------------------------------------------------------- */
+.feature {
+  width: 100%;
+  height: 48px;
+  border: 1px solid rgba(229, 231, 233, 1.0);
+  background-color: rgba(222, 232, 233, 1.0);
+}
+
+/* 功能按键面板 */
+.feature-panel {
+  display: flex;
+  float: left;
+  width: 680px;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.feature-panel span {
+  display: inline-block;
+  box-sizing: border-box;
+  flex: 1;
+  height: 32px;
+  margin: 0 5px;
+  border-radius: 10px;
+  background-color: #f6f6f6;
+  color: rgba(120, 128, 138, 1.0);
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 32px;
+  text-align: center;
+  box-shadow: 1px 2px 3px rgba(0,0,0,0.3);
+  cursor: pointer;
+}
+.feature-panel span:hover {
+  color: #f6f6f6;
+  background-color: rgba(105, 162, 208, .8);
+}
+
+/* 搜索排序面板 */
+.search-panel {
+  float: right;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.search-panel span,
+.search-panel div{
+  float: left;
+  align-items: center;
+  margin: 0 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f6f6f6;
+}
+.search-panel span {
+  display: inline-block;
+  flex: 1;
+  box-sizing: border-box;
+  width: 36px;
+  height: 36px;
+  text-align: center;
+  font-weight: bold;
+  line-height: 36px;
+  cursor: pointer;
+}
+
+.search-panel .search {
+  display: inline-block;
+  width: 190px;
+  height: 30px;
+  padding-left: 10px;
+}
+.search input {
+  float: left;
+  display: inline-block;
+  width: 150px;
+  height: 30px;
+  border: none;
+  background-color: transparent;
+  color: rgba(120, 128, 138, 1.0);
+  font-size: 14px;
+  line-height: 26px;
+  outline: none;
+}
+.search span {
+  width: 30px;
+  height: 30px;
+  margin: 0;
+  border: none;
+  background: url(../img/search-panel.png) -3px -3px no-repeat;
+  background-color: transparent;
+  background-repeat: no-repeat;
+}
+.search span:hover {background: url(../img/search-panel.png) -3px -39px no-repeat;}
+
+/* 文件排序方式 */
+.search-panel .initial-letter {background: url(../img/search-panel.png) -2px -72px;}
+.search-panel .time-sort {background: url(../img/search-panel.png) -8px -146px;}
+
+/* 文件查看方式 */
+.search-panel .tabular-form {
+  background: url(../img/search-panel.png) -1px -253px;
+}
+.search-panel .preview-form {background: url(../img/search-panel.png) -1px -216px;}
+
+/* ----------------------------------------- 导航区 --------------------------------------------- */
+.nav {
+  width: 100%;
+  height: 38px;
+  border: 1px solid rgba(229, 231, 233, 1.0);
+  background-color: rgba(238, 242, 246, 1.0);
+  font-size: 13px;
+  font-weight: bold;
+  color: rgba(120, 128, 138, 1.0);
+  line-height: 38px;
+}
+
+/* 全选框 */
+.all-in {
+  float: left;
+  width: 28px;
+  height: 16px;
+  margin: 11px 0 0 5px;
+  padding-left: 20px;
+  background: url(../img/file-panel.png) -8px -68px no-repeat;
+  line-height: 16px;
+  cursor: default;
+}
+.all-in.active {background: url(../img/file-panel.png) -8px -36px no-repeat;}
+
+/* 文件路径导航栏 */
+.catalog {display: inline;}
+.catalog a ,
+.catalog span{
+  margin-right: 4px;
+  color: rgba(120, 128, 138, 1.0);
+  text-decoration: none;
+}
+.catalog a:hover {
+  color: rgba(105, 162, 208, 1.0);
+  transition: 400ms;
+}
+
+/* ----------------------------------------- 活动框 ----------------------------------------------- */
+.active-window {
+  position: absolute;
+  top: 0;
+  left: -239px;
+  width: 228px;
+  height: 100%;
+  overflow: hidden;
+  padding: 6px;
+  background: rgba(52, 55, 66, 1.0);
+  box-shadow: 2px 6px 20px rgba(0,0,0, .9); 
+}
+.active-window h2 {
+  margin-bottom: 20px;
+  color: rgba(105, 162, 208, 1.0);
+  font-size: 20px;
+}
+
+.tree-menu ul {
+  margin-bottom: 8px;
+  padding-left:12px;
+}
+.tree-menu ul li {margin-top: 4px;}
+
+.tree-menu li {
+  position: relative;
+  width: 100%;
+  height: auto;
+  font-size: 0;
+}
+
+.tree-menu span {
+  display: inline-block;
+  width: 16px;
+  height: 26px;
+  vertical-align: bottom;
+}
+
+.tree-menu span.open {background: url(../img/arrow.png) -6px -113px no-repeat;}
+.tree-menu span.close {background: url(../img/arrow.png) -6px -29px no-repeat;}
+.tree-menu span.open:hover {background: url(../img/arrow.png) -6px -85px no-repeat}
+.tree-menu span.close:hover {background: url(../img/arrow.png) -6px -1px no-repeat;}
+
+.tree-menu a {
+  display: inline-block;
+  width: auto;
+  height: 26px;
+  padding: 0 6px 0 22px;
+  border-radius: 2px;
+  color: rgba(190, 213, 232, 1.0);
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  line-height: 26px;
+  transition: 300ms;
+  background-position: 4px center;
+  background-repeat: no-repeat;
+}
+.tree-menu a.catalog-file-folder,
+.catalog-tree-list a.catalog-file-folder {
+background-image: url(../img/file_icon.png);
+}
+.tree-menu a.catalog-file-image,
+.catalog-tree-list a.catalog-file-image {
+  background-image: url(../img/img_icon.png);
+}
+.tree-menu a.catalog-file-note,
+.catalog-tree-list a.catalog-file-note {
+  background-image: url(../img/doc_icon.png);
+}
+
+.tree-menu a:hover,
+.tree-menu a.active{
+  color: rgba(255, 255, 255, 1.0);
+  background-color: rgba(105, 162, 208, .6);
+}
+
+/* ----------------------------------------- 移动到目录树 ----------------------------------------------- */
+
+.catalog-tree-list ul {
+  position: relative;
+  padding-left: 12px;
+  margin-bottom: 10px;
+}
+.shiftfile-catalog li {
+  width: 100%;
+  height: auto;
+  margin-top: 5px;
+}
+.catalog-tree-list span {
+  display: inline-block;
+  width: 16px;
+  height: 22px;
+  vertical-align: bottom;
+}
+.catalog-tree-list span.open {background: url(../img/arrow.png) -6px -141px no-repeat;}
+.catalog-tree-list span.close {background: url(../img/arrow.png) -6px -57px no-repeat;}
+.catalog-tree-list a {
+  display: inline-block;
+  width: auto;
+  height: 22px;
+  padding: 0 10px 0 22px;
+  border-radius: 2px;
+  background: url(../img/file_icon.png) 4px center no-repeat;
+  color: rgba(37, 83, 121, .8);
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  line-height: 22px;
+  transition: 300ms;
+}
+.catalog-tree-list a:hover {
+  color: rgba(255, 255, 255, 1.0);
+  background-color: rgba(37, 83, 121, .6);
+  cursor: pointer;
+}
+
+.catalog-tree-list a.catalog-file-image {background-image: url(../img/img_icon.png);}
+.catalog-tree-list a.catalog-file-note {background-image: url(../img/doc_icon.png);}
